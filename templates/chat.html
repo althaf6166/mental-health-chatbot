@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Chat with the Bot</title>
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h1>Chat with the Bot</h1>
+        </header>
+        <div class="chat-area">
+            {% if response %}
+                <div class="user-message message"><strong>You:</strong> {{ request.form.get("message") }}</div>
+                <div class="bot-message message"><strong>Bot:</strong> {{ response }}</div>
+            {% endif %}
+        </div>
+        <form method="POST">
+            <input type="text" name="message" placeholder="Type your message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <footer>
+        <p>Powered by Flask</p>
+    </footer>
+</body>
+</html>

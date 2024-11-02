@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Welcome to the Chatbot</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Chatbot</h1>
+        <p>Let's talk about how you're feeling.</p>
+    </header>
+    <main>
+       <button><a href="{{ url_for('chat') }}" class="start-chat">Start Chatting</a></button> 
+    </main>
+    <footer>
+        <p>Powered by Flask</p>
+    </footer>
+</body>
+</html>
